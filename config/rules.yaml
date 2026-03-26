@@ -1,0 +1,19 @@
+sources:
+  - request.GET
+  - request.POST
+  - req.body
+  - req.query
+
+sinks:
+  RCE:
+    - os.system
+    - exec
+    - eval
+
+  SSRF:
+    - requests.get
+    - axios.get
+
+  XSS:
+    - innerHTML
+    - res.send
